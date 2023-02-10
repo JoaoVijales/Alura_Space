@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from galeria.models import Fotografias
 
 def index(request):
-    fotografias = Fotografias.objects.all()
+    fotografias = Fotografias.objects.filter(publicada=True)
     dados = {
     1: {"nome":"Nebulosa de Carina",
         "legenda":"webbtelescope.org / NASA / James Webb"},

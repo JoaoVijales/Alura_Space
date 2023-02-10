@@ -13,6 +13,7 @@ class Fotografias(models.Model):
     descricao = models.TextField( null=False, blank=False)
     foto = models.CharField(max_length=150, null=False, blank=False)
     categoria = models.CharField(max_length=100, choices=OPCAO_CATEGORIA, default='')
+    publicada = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         return f"fotografia [nome={self.nome}]"
