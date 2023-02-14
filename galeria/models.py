@@ -12,7 +12,7 @@ class Fotografias(models.Model):
     nome = models.CharField(max_length=100, null=False, blank=False)
     legenda = models.CharField(max_length=150, null=False, blank=False)
     descricao = models.TextField( null=False, blank=False)
-    foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank=False)
+    foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank=True)
     categoria = models.CharField(max_length=100, choices=OPCAO_CATEGORIA, default='')
     publicada = models.BooleanField(default=False)
     data_foto = models.DateTimeField(default=datetime.now(), blank=False)
