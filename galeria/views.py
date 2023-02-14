@@ -2,13 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from galeria.models import Fotografias
 
 def index(request):
-    fotografias = Fotografias.objects.order_by("data_foto").filter(publicada=True)
-    dados = {
-    1: {"nome":"Nebulosa de Carina",
-        "legenda":"webbtelescope.org / NASA / James Webb"},
-    2: {"nome":"Galáxia NGC 1079",
-        "legenda":"nasa.org / NASA / Hubble"}
-    }
+    fotografias = Fotografias.objects.order_by("-data_foto").filter(publicada=True)
     return render(request, 'galeria/index.html', {"cards": fotografias})
      
 

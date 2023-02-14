@@ -145,6 +145,8 @@ table {
 }
 
 .card__imagem {
+    height: 17rem;
+    object-fit: cover;
     width: 450px;
     border-radius: 10px 10px 0 0;
 }
